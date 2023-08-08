@@ -1,13 +1,14 @@
 #!/bin/bash
-# This script runs a Python script specified by the environment variable $PYFILE
+# This script runs a Python script specified by
+# the environment variable $PYFILE
 
 # Get the Python script filename from the environment variable
-pyfile=$PYFILE
+pyfile = $PYFILE
 
 # Check if the specified file exists
-if [ ! -f "$pyfile" ]; then
-    echo "Error: File $pyfile not found."
-    exit 1
+if [! -f "$pyfile"]
+then echo "Error: File $pyfile not found."
+exit 1
 fi
 
 # Run the Python script using python3 interpreter
