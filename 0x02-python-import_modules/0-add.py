@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 a = 1
 b = 2
 add_0 = __import__('add_0')
