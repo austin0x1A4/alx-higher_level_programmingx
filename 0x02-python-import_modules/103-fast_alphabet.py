@@ -1,3 +1,3 @@
-#!user/bin/python3
-import sys
-print(*map(chr, range(ord('A'), ord('Z')+1)), sep='', end='\n')
+#!/usr/bin/python3
+import string
+print(string.ascii_uppercase)
