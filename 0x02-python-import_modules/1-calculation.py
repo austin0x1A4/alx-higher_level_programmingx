@@ -1,14 +1,19 @@
 #!/usr/bin/python3
-a = 10
-b = 5
-calculator_1 = __import__('calculator_1')
 
-add_result = calculator_1.add(a, b)
-sub_result = calculator_1.sub(a, b)
-mul_result = calculator_1.mul(a, b)
-div_result = calculator_1.div(a, b)
+if __name__ == "__main__":
+    """Handle basic arithmetic operations."""
+    from calculator_1 import add, sub, mul, div 
+    import sys
 
-print("{} + {} = {}".format(a, b, add_result))
-print("{} - {} = {}".format(a, b, sub_result))
-print("{} * {} = {}".format(a, b, mul_result))
-print("{} / {} = {}".format(a, b, div_result))
+    if len(sys.argv) - 1 != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
+    if sys.argv[2] not in list(ops.keys()):
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
