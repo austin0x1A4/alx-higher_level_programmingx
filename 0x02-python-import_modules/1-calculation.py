@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 a = 10
 b = 5
 calculator_1 = __import__('calculator_1')
