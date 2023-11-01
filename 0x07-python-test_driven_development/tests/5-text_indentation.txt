@@ -1,0 +1,53 @@
+# Testing the text_indentation function
+
+# Test 1: Normal text with . (period)
+>>> text_indentation("This is a test sentence. Another sentence follows? And a final one: the last sentence.")
+This is a test sentence.
+Another sentence follows?
+And a final one: the last sentence.
+
+# Test 2: Text with no punctuation
+>>> text_indentation("No punctuation here")
+No punctuation here
+
+# Test 3: Only one sentence with :
+>>> text_indentation("Only one sentence: and no more")
+Only one sentence: and no more
+
+# Test 4: Empty text
+>>> text_indentation("")
+(No output)
+
+# Test 5: Text with multiple spaces, newlines, ?, and :
+>>> text_indentation("Text   with   multiple spaces.  And  newlines  ?  Check it.  :")
+Text   with   multiple spaces.
+And  newlines?
+Check it.
+
+# Test 6: Text with multiple sentences and various punctuation
+>>> text_indentation("Sentence 1. Sentence  2? Sentence   3: Sentence    4")
+Sentence 1.
+Sentence  2?
+Sentence   3:
+Sentence    4
+
+# Test 7: Text with multiple sentences and trailing spaces
+>>> text_indentation("Sentence 1.  Sentence 2?   Sentence 3: Sentence 4   ")
+Sentence 1.
+Sentence 2?
+Sentence 3:
+Sentence 4
+
+# Test 8: Text with spaces around sentences
+>>> text_indentation(" Sentence 1. Sentence 2 ? Sentence 3: Sentence 4 ")
+Sentence 1.
+Sentence 2?
+Sentence 3:
+Sentence 4
+
+# Test 9: Text with colons and multiple occurrences of : and ?
+>>> text_indentation("text:with:colons?inside.words. Try it? : : :")
+text:with:colons?
+inside.words.
+Try it?
+: : :
