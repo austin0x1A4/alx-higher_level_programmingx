@@ -1,53 +1,17 @@
-# Testing the text_indentation function
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Test 1: Normal text with . (period)
->>> text_indentation("This is a test sentence. Another sentence follows? And a final one: the last sentence.")
-This is a test sentence.
-Another sentence follows?
-And a final one: the last sentence.
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo?")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-# Test 2: Text with no punctuation
->>> text_indentation("No punctuation here")
-No punctuation here
+Quonam modo?
 
-# Test 3: Only one sentence with :
->>> text_indentation("Only one sentence: and no more")
-Only one sentence: and no more
+>>> text = "This is a sentence with special characters. And another..."
+>>> text_indentation(text)  
+This is a sentence with special characters.
 
-# Test 4: Empty text
->>> text_indentation("")
-(No output)
+And another...
 
-# Test 5: Text with multiple spaces, newlines, ?, and :
->>> text_indentation("Text   with   multiple spaces.  And  newlines  ?  Check it.  :")
-Text   with   multiple spaces.
-And  newlines?
-Check it.
-
-# Test 6: Text with multiple sentences and various punctuation
->>> text_indentation("Sentence 1. Sentence  2? Sentence   3: Sentence    4")
-Sentence 1.
-Sentence  2?
-Sentence   3:
-Sentence    4
-
-# Test 7: Text with multiple sentences and trailing spaces
->>> text_indentation("Sentence 1.  Sentence 2?   Sentence 3: Sentence 4   ")
-Sentence 1.
-Sentence 2?
-Sentence 3:
-Sentence 4
-
-# Test 8: Text with spaces around sentences
->>> text_indentation(" Sentence 1. Sentence 2 ? Sentence 3: Sentence 4 ")
-Sentence 1.
-Sentence 2?
-Sentence 3:
-Sentence 4
-
-# Test 9: Text with colons and multiple occurrences of : and ?
->>> text_indentation("text:with:colons?inside.words. Try it? : : :")
-text:with:colons?
-inside.words.
-Try it?
-: : :
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
